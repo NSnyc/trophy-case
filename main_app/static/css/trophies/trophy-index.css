@@ -1,0 +1,66 @@
+.card-container {
+  padding: 0 30px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 275px;
+  background-image: url("../../images/felt-material.png");
+}
+
+.card-content {
+  padding: 10px 0;
+  width: 100%;
+  color: rgb(216, 216, 216);
+}
+
+.usr-img {
+  width: 100%;
+  border-radius: var(--card-border-radius);
+}
+
+.card > a {
+  text-decoration: none;
+  color: var(--text-color);
+  
+}
+
+.card h2 {
+  display: flex;
+  justify-content: center;
+  margin: 10px 10px;
+  font-size: var(--font-xl);
+}
+
+.card p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px 10px 0;
+  font-size: var(--font-reg);
+}
+
+.trophy-img {
+  position:relative;
+  left: 47px;
+  top: 64px;
+  height: 200px;
+  width: auto;
+  z-index: 9;
+}
+
+.podium-img {
+  position: relative;
+  top: 45px;
+  left: 42.5px;
+  height: 60px;
+  width: auto;
+
+}
+
+.shelf {
+  height: 50px;
+  width: 100%;
+}

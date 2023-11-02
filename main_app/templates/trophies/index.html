@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link 
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'css/trophies/trophy-index.css' %}"
+/>
+{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+  <h1>Trophy List</h1>
+  <img src="{% static 'images/logo.png' %}" alt="A Trophy" />
+  <img src="{% static 'images/playstation-platinum-trophy.png' %}" alt="Playstation Platinum Trophy" />
+  <img src="{% static 'images/medal.png' %}" alt="A Gold Medal" />
+  <img src="{% static 'images/trophy.png' %}" alt="A Gold Trophy" />
+</section>
+
+<section class="card-container">
+  {% for trophy in trophies %}
+    <div class="card">
+      <div class="card-content">
+        <h2 class="card-title">{{ trophy.name }}</h2>
+        {% if trophy.completion_date > 0 %}
+          <p>Achieved on {{ trophy.completion_date }}</p>
+        {% else %}
+          <p>Trophy Difficulty: {{ trophy.difficulty }}.</p>
+        {% endif %}
+        <p><small>{{ trophy.description }}</small></p>
+        <div class="card-img-container">
+          <img 
+            src="{% static 'images/gold-trophy.png' %}" 
+            alt="Playstation Platinum Trophy"
+            class="trophy-img"
+          >
+          <img 
+            src="{% static 'images/black-podium.png' %}" 
+            alt="Black Podium"
+            class="podium-img"
+          >
+          <img 
+            src="{% static 'images/black-shelf.png' %}" 
+            alt="Black Shelf"
+            class="shelf"
+          >
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</section>
+
+{% endblock %}

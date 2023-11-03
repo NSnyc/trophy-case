@@ -6,9 +6,12 @@
 {% endblock %}
 
 {% block content %}
-
 <div class="page-header">
-  <h1>Add a Trophy</h1>
+{% if trophy %}
+    <h1>Edit {{ trophy.name }}</h1>
+  {% else %}
+    <h1>Add a Trophy</h1>
+  {% endif %}
   <img src="{% static 'images/gold-trophy.png' %}" alt="A gold trophy"/>
 </div>
 <form action="" method="post" class="form-container">

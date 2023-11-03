@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Trophy
 
 
@@ -38,3 +38,11 @@ def trophy_detail(request, trophy_id):
 class TrophyCreate(CreateView):
   model = Trophy
   fields = '__all__'
+
+class TrophyUpdate(UpdateView):
+  model = Trophy
+  fields = ['difficulty', 'description', 'date']
+
+class TrophyDelete(DeleteView):
+  model = Trophy
+  success_url = '/trophies/'

@@ -26,6 +26,10 @@
       <h2>Difficulty: {{ trophy.difficulty }}</h2>
     {% endif %}
     <p>{{ trophy.description }}</p>
+    <div class="trophy-actions">
+      <a href="{% url 'trophy-update' trophy.id %}" class="btn warn">Edit</a>
+      <a href="{% url 'trophy-delete' trophy.id %}" class="btn danger">Delete</a>
+    </div>
   </div>
 </section>
 

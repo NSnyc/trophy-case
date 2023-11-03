@@ -8,20 +8,6 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Trophy
 
 
-# class Trophy:  # Note that parens are optional if not inheriting from another class
-#   def __init__(self, name, difficulty, description, date):
-#     self.name = name
-#     self.difficulty = difficulty
-#     self.description = description
-#     self.date = date
-
-# trophies = [
-#   Trophy('Lolo', 1, 'Kinda rude.', '3/3/2023'),
-#   Trophy('Sachi', 2, 'Looks like a turtle.', '3/3/2023'),
-#   Trophy('Fancy', 3, 'Happy fluff ball.', '3/3/2023'),
-#   Trophy('Bonk', 4, 'Meows loudly.', '3/3/2023')
-# ]
-
 class Home(LoginView):
   template_name = 'home.html'
 

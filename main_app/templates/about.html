@@ -1,10 +1,16 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/about.css' %}"/>
+{% endblock %}
+
 
 {% block content %}
 
 <body>
   <h1>Welcome to Trophy Case</h1>
-  <div class="page-content">
+  <div class="about-page-content">
     <section id="mission">
       <h2>Our Mission</h2>
       <p>At Trophy Case, we believe that every achievement, no matter how small, deserves recognition. Our platform empowers users to create, update, and delete trophies that symbolize their accomplishments. Whether you're marking off personal goals, professional victories, or just daily wins, Trophy Case is here to help you acknowledge your journey's success.</p>

@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from .models import Trophy
 from django.views.generic.edit import CreateView
+from .models import Trophy
 
 
 # class Trophy:  # Note that parens are optional if not inheriting from another class
@@ -34,3 +34,7 @@ class TrophyCreate(CreateView):
 def trophy_detail(request, trophy_id):
   trophy = Trophy.objects.get(id=trophy_id)
   return render(request, 'trophies/detail.html', { 'trophy': trophy })
+
+class TrophyCreate(CreateView):
+  model = Trophy
+  fields = '__all__'

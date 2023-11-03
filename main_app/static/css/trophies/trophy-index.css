@@ -1,13 +1,14 @@
 .card-container {
-  padding: 0 30px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+
 }
 
 .card {
   width: 275px;
   background-image: url("../../images/felt-material.png");
+
 }
 
 .card-content {
@@ -30,15 +31,16 @@
 .card h2 {
   display: flex;
   justify-content: center;
-  margin: 10px 10px;
-  font-size: var(--font-xl);
+  margin: 2px 5px;
+  font-size: var(--font-reg);
+
 }
 
 .card p {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 5px 10px 0;
+  margin: 2px 5px 0;
   font-size: var(--font-reg);
 }
 
@@ -49,6 +51,10 @@
   height: 200px;
   width: auto;
   z-index: 9;
+}
+
+.trophy-img:hover{
+  transform: scale(1.2);
 }
 
 .podium-img {

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link 
+  rel="stylesheet" 
+  type="text/css" 
+  href="{% static 'css/trophies/trophy-detail.css' %}"
+/>
+{% endblock %}
+
+{% block content %}
+
+<section class="trophy-container">
+  <div class="trophy-img">
+    <img 
+      src="{% static 'images/gold-trophy.png' %}" 
+      alt="A gold trophy"
+    >
+  </div>
+  <div class="trophy-details">
+    <h1>{{ trophy.name }}</h1>
+    {% if trophy.date != '' %}
+      <h2>Achieved on {{ trophy.date }}!</h2>
+    {% else %}
+      <h2>Difficulty: {{ trophy.difficulty }}</h2>
+    {% endif %}
+    <p>{{ trophy.description }}</p>
+  </div>
+</section>
+
+{% endblock %}

@@ -24,29 +24,31 @@
     <div class="card">
       <div class="card-content">
         <h2 class="card-title">{{ trophy.name }}</h2>
-        {% if trophy.completion_date > 0 %}
-          <p>Achieved on {{ trophy.completion_date }}</p>
+        {% if trophy.date != '' %}
+        <p>Achieved on {{ trophy.date }}</p>
         {% else %}
-          <p>Trophy Difficulty: {{ trophy.difficulty }}.</p>
+        <p>Trophy Difficulty: {{ trophy.difficulty }}.</p>
         {% endif %}
         <p><small>{{ trophy.description }}</small></p>
-        <div class="card-img-container">
-          <img 
-            src="{% static 'images/gold-trophy.png' %}" 
-            alt="Playstation Platinum Trophy"
-            class="trophy-img"
-          >
-          <img 
-            src="{% static 'images/black-podium.png' %}" 
-            alt="Black Podium"
-            class="podium-img"
-          >
-          <img 
-            src="{% static 'images/black-shelf.png' %}" 
-            alt="Black Shelf"
-            class="shelf"
-          >
-        </div>
+        <a href="{% url 'trophy-detail' trophy.id %}">
+          <div class="card-img-container">
+            <img 
+              src="{% static 'images/gold-trophy.png' %}" 
+              alt="Gold Trophy"
+              class="trophy-img"
+            >
+            <img 
+              src="{% static 'images/black-podium.png' %}" 
+              alt="Black Podium"
+              class="podium-img"
+            >
+            <img 
+              src="{% static 'images/black-shelf.png' %}" 
+              alt="Black Shelf"
+              class="shelf"
+            >
+          </div>
+        </a>
       </div>
     </div>
   {% endfor %}

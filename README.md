@@ -68,9 +68,10 @@ Join us and let every victory be seen and celebrated. With Trophy Case, you're n
 
 ## Next Steps
 
-- We will be implementing the ability to adjust the trophies that are in your case
-- We will allow users to update each inidividual trophy, so that they can be unique
-- We will add a light mode/ dark mode
+- Add a to do list that will create a trophy (with a confetti animation/cheer audio) when you check items off
+- Allow users to update each inidividual trophy, so that they can be unique images
+- Add a light mode/ dark mode
+- Add Trophy categories
 
 ## Attributions
 

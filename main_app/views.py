@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.views import LoginView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth import login
@@ -31,10 +31,6 @@ class TrophyCreate(LoginRequiredMixin, CreateView):
 def trophy_detail(request, trophy_id):
   trophy = Trophy.objects.get(id=trophy_id)
   return render(request, 'trophies/detail.html', { 'trophy': trophy })
-
-class TrophyCreate(LoginRequiredMixin, CreateView):
-  model = Trophy
-  fields = '__all__'
 
 class TrophyUpdate(LoginRequiredMixin, UpdateView):
   model = Trophy

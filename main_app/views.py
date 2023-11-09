@@ -5,6 +5,7 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django import forms
 from .models import Trophy
 
 
@@ -22,6 +23,12 @@ def trophy_index(request):
 class TrophyCreate(LoginRequiredMixin, CreateView):
   model = Trophy
   fields = ['name', 'difficulty', 'description', 'date']
+  success_url = '/trophies/'
+
+  def get_form(self, form_class=None):
+    form = super().get_form(form_class)
+    form.fields['date'].widget = forms.TextInput(attrs={'placeholder': 'YYYY-MM-DD'})
+    return form
 
   def form_valid(self, form):
     form.instance.user = self.request.user

@@ -27,7 +27,7 @@ class TrophyCreate(LoginRequiredMixin, CreateView):
 
   def get_form(self, form_class=None):
     form = super().get_form(form_class)
-    form.fields['date'].widget = forms.TextInput(attrs={'placeholder': 'YYYY-MM-DD'})
+    form.fields['date'].widget = forms.DateInput(attrs={'placeholder': 'MM-DD-YYYY', 'type': 'date'})
     return form
 
   def form_valid(self, form):
@@ -42,6 +42,11 @@ def trophy_detail(request, trophy_id):
 class TrophyUpdate(LoginRequiredMixin, UpdateView):
   model = Trophy
   fields = ['difficulty', 'description', 'date']
+
+  def get_form(self, form_class=None):
+    form = super().get_form(form_class)
+    form.fields['date'].widget = forms.DateInput(attrs={'placeholder': 'MM-DD-YYYY', 'type': 'date'})
+    return form
 
 class TrophyDelete(LoginRequiredMixin, DeleteView):
   model = Trophy
